@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>HotelForm</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Form</h1>
+    <form action="#" th:action="@{/greeting}" th:object="${greeting}" method="post">
+    
+    <select id="input" th:field="*{name}" >
+            <option value="none">select location</option>
+            <option value="mumbai">Mumbai</option>
+            <option value="delhi">Delhi</option>
+        </select>
+	    <select  th:field="*{content}">
+			  <option value="Hotel1">Knadivali Hotel</option>
+			  <option value="Hotel2">Borivali Hotel</option>
+			  <option value="Hotel3">Rajdhani Hotel (Delhi)</option>
+			  <option value="Hotel4">Omkar Hotel</option>
+		</select>
+        
+        <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+    </form>
+</body>
+</html>

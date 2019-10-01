@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>HotelForm</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+</head>
+<body>
+	<h1>Form</h1>
+    <form action="#" th:action="@{/greeting}" th:object="${greeting}" method="post">
+    
+    <select id="input" th:field="*{name}" onchange="random_function()">
+            <option value="none">select option</option>
+            <option value="Mumbai">Mumbai</option>
+            <option value="Delhi">Delhi</option>
+        </select>
+        <div id="output">
+           
+        </div>
+	    
+        
+        <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+    </form>
+    
+    <script>
+    function random_function()
+    {
+        var a=document.getElementById("input").value;
+        if(a==="Mumbai")
+        {
+            var arr=["Maharashtra","Delhi"];
+        }
+        else if(a==="Delhi")
+        {
+            var arr=["Washington","Texas","New York"];
+        }
+       
+        var string="";
+       
+        for(i=0;i<arr.length;i++)
+        {
+            string=string+"<option>"+arr[i]+"</option>";
+        }
+        string='<select th:field="*{content}">'+string+"</select>";
+        document.getElementById("output").innerHTML=string;
+    }
+</script>
+
+</body>
+</html>

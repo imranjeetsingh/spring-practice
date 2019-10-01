@@ -1,0 +1,9 @@
+package com.example.HotelCatalouge;
+
+public class Greeting {
+	private String name;
+    private String content;
+
+    
+
+}
